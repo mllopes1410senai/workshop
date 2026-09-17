@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+
+<body>
+    <header>
+        <img src="assets/img/logo.png" alt="Logo" class="logo">
+    </header>
+    <main>
+        <div class="topo">
+            <div>
+                <h1>Produtos</h1>
+                <p>Gerencie os produtos do seu estoque.</p>
+            </div>
+            <button onclick="abrirCadastro()" class="novo">+ Novo Produto</button>
+        </div>
+
+        <table id="tabela">
+            <tr>     
+                <th>Nome</th>
+                <th>Preço (R$)</th>
+                <th>Quantidade</th> 
+                <th>Alterações</th>    
+            </tr>
+
+        </table>
+
+        <section id="resultados">
+            <h5>Resultados: </h5>
+            
+            <h4 id="total"></h4>
+            <h4 id="menor"></h4>
+        </section>
+
+        <section id="cadastrar">
+            <div class="titulos">
+                <h2>Novo produto</h2>
+                <h3>Preencha as informações do produto</h3>
+            </div>
+            <form>
+                <div class="input">
+                    <p>Nome do produto</p>
+                    <input type="text" name="nome" id="nome" placeholder="Ex: Caderno">
+                </div>
+
+                <div class="input">
+                    <p>Preço</p>
+                    <input type="number" name="preco" id="preco" placeholder="Ex: 30,00">
+                </div>
+
+                <div class="input">
+                    <p>Quantidade Estoque</p>
+                    <input type="number" name="qtdEstoque" id="qtdEstoque" placeholder="Ex: 3 unidades">
+                </div>
+
+                <button type="button" onclick="estoque.cadastrarProduto()">Cadastrar</button>
+            </form>
+        </section>
+
+        <section id="editor">
+            <div class="titulos">
+                <h2>Editar produto</h2>
+                <h3>Preencha as informações do produto</h3>
+            </div>
+            <form>
+                <input type="hidden" id="posicao">
+
+                <div class="input">
+                    <p>Nome do produto</p>
+                    <input type="text" name="nome" id="nome2" >
+                </div>
+
+                <div class="input">
+                    <p>Preço</p>
+                    <input type="number" name="preco" id="preco2">
+                </div>
+
+                <div class="input">
+                    <p>Quantidade Estoque</p>
+                    <input type="number" name="qtdEstoque" id="qtdEstoque2">
+                </div>
+
+                <button type="button" onclick="estoque.editarProduto()">Salvar</button>
+            </form>
+        </section>
+    </main>
+    <script src="assets/js/controleEstoque.js" defer></script>
+    </body>
+</html>
