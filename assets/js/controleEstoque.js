@@ -63,18 +63,24 @@ const estoque = {
 
         document.querySelector('#cadastrar').style.display = 'none'
 
-        document.querySelector(".excluir").addEventListener("click", function(event) {
-            var pos = event.target.getAttribute("data-pos")
+        for (var excluir of  document.querySelectorAll(".excluir")) {
+           excluir.addEventListener("click", function(event) {
+                var pos = event.target.getAttribute("data-pos")
 
-            estoque.deletarProduto(pos)
-        })
+                estoque.deletarProduto(pos)
+            })
+        }
 
-        document.querySelector(".editar").addEventListener("click", function(event) {
-            var pos = event.target.getAttribute("data-pos")
-            document.querySelector("#posicao").value = pos
+        for (var editar of  document.querySelectorAll(".editar")) {
+           editar.addEventListener("click", function(event) {
+                var pos = event.target.getAttribute("data-pos")
+                document.querySelector("#posicao").value = pos
 
-            estoque.abrirEditor(pos)
-        })
+                estoque.abrirEditor(pos)
+            })
+        }
+
+        
 
         this.calcularResultados()
     },
@@ -82,6 +88,7 @@ const estoque = {
     deletarProduto(posicao){
         this.produtos.splice(posicao, 1)
         this.exibirCadastros()
+        this.calcularResultados()
     },
 
 
@@ -115,11 +122,17 @@ const estoque = {
     calcularResultados(){
         var soma = 0
         var menor = Infinity
-        for (var produto of this.produtos){
-            soma += Number(produto.qtdEstoque)
-            if(produto.qtdEstoque < menor){
-                menor = produto.nome
+        
+        if (this.produtos.length > 0) {
+            for (var produto of this.produtos){
+                soma += Number(produto.qtdEstoque)
+                if(produto.qtdEstoque < menor){
+                    menor = produto.nome
+                }
             }
+        } else {
+            soma = 0
+            menor = "Não possui produtos"
         }
 
         document.querySelector('#total').innerHTML = 'A soma dos produtos em estoque é: ' + soma
@@ -131,4 +144,4 @@ function abrirCadastro(){
     document.querySelector('#cadastrar').style.display = 'block'
 }
 
-estoque.armazenarObjeto()
+estoque.armazenarObjeto() 
