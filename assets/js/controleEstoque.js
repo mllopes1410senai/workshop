@@ -5,7 +5,7 @@ const estoque = {
     armazenarObjeto(){
         var objeto = localStorage.getItem('produtos')
         objeto = JSON.parse(objeto)
-        this.produtos = objeto
+        this.produtos = objeto || [] //if ternário, if em uma única linha, se for um objeto adiciona, senão retorna uma lista vazia
 
         this.exibirCadastros()
     },
