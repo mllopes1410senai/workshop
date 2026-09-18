@@ -180,9 +180,233 @@ th, td {
 #resultados h4{
     color: var(--escuro);
     font-size: 15px;
+    font-weight: normal;
 }
 
 #resultados h5{
     color: var(--escuro);
     font-size: 20px;
+}
+
+@media (max-width: 768px) {
+
+    main {
+        padding: 15px;
+    }
+
+    header {
+        height: 70px;
+    }
+
+    .logo {
+        height: 45px;
+    }
+
+    .topo {
+        width: 90%;
+        margin: auto;
+        padding-bottom: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .novo {
+        width: 100%;
+        height: 42px;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+
+    table {
+        width: 90%;
+        margin: auto;
+    }
+
+    th,
+    td {
+        padding: 7px 5px;
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 11px;
+    }
+
+
+    .editar,
+    .excluir {
+        width: 58px;
+        height: 32px;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    #resultados {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    #resultados h4 {
+        font-size: 14px;
+    }
+
+    #resultados h5 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    main {
+        padding: 12px;
+    }
+
+    header {
+        height: 68px;
+    }
+
+    .logo {
+        height: 43px;
+    }
+
+    .topo {
+        width: 92%;
+        margin: auto;
+        padding-bottom: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .novo {
+        width: 100%;
+        height: 43px;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    table {
+        width: 92%;
+        margin: auto;
+    }
+
+    th,
+    td {
+        padding: 7px 4px;
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 10px;
+    }
+
+    .editar,
+    .excluir {
+        width: 55px;
+        height: 31px;
+        padding: 5px 3px;
+        font-size: 10px;
+    }
+
+    #resultados {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    #resultados h4 {
+        font-size: 14px;
+    }
+
+    #resultados h5 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    main {
+        padding: 10px;
+    }
+
+    header {
+        height: 65px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .topo {
+        width: 94%;
+        margin: auto;
+        gap: 9px;
+    }
+
+    h1 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    .novo {
+        width: 100%;
+        height: 42px;
+        font-size: 11px;
+    }
+
+    table {
+        width: 94%;
+        margin: auto;
+    }
+
+    th,
+    td {
+        padding: 6px 3px;
+        font-size: 11px;
+    }
+
+    th {
+        font-size: 9px;
+    }
+
+    .editar,
+    .excluir {
+        width: 50px;
+        height: 29px;
+        padding: 4px 2px;
+        font-size: 9px;
+    }
+
+    #resultados {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    #resultados h4 {
+        font-size: 13px;
+    }
+
+    #resultados h5 {
+        font-size: 17px;
+    }
 }
