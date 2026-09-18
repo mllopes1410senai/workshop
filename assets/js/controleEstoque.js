@@ -11,16 +11,19 @@ const estoque = {
     },
 
     cadastrarProduto(){
+        var codigo = document.querySelector('#codigo').value
         var nome = document.querySelector('#nome').value
         var preco = document.querySelector('#preco').value
         var qtdEstoque = document.querySelector('#qtdEstoque').value
 
         this.produtos.push({
+            codigo: codigo,
             nome: nome,
             preco: preco,
             qtdEstoque: qtdEstoque
         })
 
+        document.querySelector('#codigo').value = ""
         document.querySelector('#nome').value = ""
         document.querySelector('#preco').value = ""
         document.querySelector('#qtdEstoque').value = ""
@@ -36,6 +39,7 @@ const estoque = {
 
         tabela.innerHTML = `
             <tr>     
+                <th>Código</th>
                 <th>Nome</th>
                 <th>Preço (R$)</th>
                 <th>Quantidade</th> 
@@ -48,6 +52,7 @@ const estoque = {
         for (var produto of this.produtos) {
             tabela.innerHTML += `
                 <tr> 
+                    <td>`+ produto.codigo +`</td>
                     <td>`+ produto.nome +`</td>
                     <td>`+ produto.preco +`</td>
                     <td>`+ produto.qtdEstoque +`</td>
@@ -99,6 +104,7 @@ const estoque = {
 
         document.querySelector('#editor').style.display = 'block'
 
+        document.querySelector("#codigo2").value = produto.codigo
         document.querySelector("#nome2").value = produto.nome
         document.querySelector("#preco2").value = produto.preco
         document.querySelector("#qtdEstoque2").value = produto.qtdEstoque
@@ -106,10 +112,12 @@ const estoque = {
 
     editarProduto(){
         var posicao = document.querySelector('#posicao').value
+        var codigoEditar = document.querySelector('#codigo2').value
         var nomeEditar = document.querySelector('#nome2').value
         var precoEditar = document.querySelector('#preco2').value
         var qtdEstoqueEditar = document.querySelector('#qtdEstoque2').value
 
+        this.produtos[posicao].codigo = codigoEditar
         this.produtos[posicao].nome = nomeEditar
         this.produtos[posicao].preco = precoEditar
         this.produtos[posicao].qtdEstoque = qtdEstoqueEditar
